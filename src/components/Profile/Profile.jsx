@@ -1,4 +1,5 @@
 import { Stats } from '../Stats/Stats';
+import PropTypes from 'prop-types';
 
 import defaultAvatar from './defaultAvatar.png';
 
@@ -18,4 +19,18 @@ export const Profile = ({
       <Stats stats={stats} />
     </ProfileView>
   );
+};
+
+Profile.propTypes = {
+  avatar: PropTypes.string,
+  username: PropTypes.string,
+  tag: PropTypes.string,
+  location: PropTypes.string,
+  stats: PropTypes.objectOf(
+    PropTypes.shape({
+      followers: PropTypes.number.isRequired,
+      views: PropTypes.number.isRequired,
+      likes: PropTypes.number.isRequired,
+    })
+  ),
 };
