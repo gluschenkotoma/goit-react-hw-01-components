@@ -6,7 +6,11 @@ import defaultAvatar from './defaultAvatar.png';
 import { ProfileView, Description, Name } from './Profile.styled';
 
 export const Profile = ({
-  user: { avatar = defaultAvatar, username, tag, location, stats },
+  avatar = defaultAvatar,
+  username,
+  tag,
+  location,
+  stats,
 }) => {
   return (
     <ProfileView>
